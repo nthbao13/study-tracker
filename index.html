@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <p class="eyebrow">Việc học hôm nay</p>
+      <h1 id="today-title">…</h1>
+      <div class="progress" aria-live="polite">
+        <div class="progress-bar"><span id="progress-fill"></span></div>
+        <span id="progress-text" class="progress-text"></span>
+      </div>
+    </header>
+
+    <section id="tasks" class="tasks" aria-label="Danh sách task"></section>
+
+    <form id="report" class="card report" novalidate>
+      <h2>Báo cáo cuối ngày</h2>
+
+      <label class="field">
+        <span>Tên của em <em>(không bắt buộc)</em></span>
+        <input type="text" id="student" autocomplete="name" maxlength="60" />
+      </label>
+
+      <label class="field">
+        <span>Hôm nay em học được gì mới?</span>
+        <textarea id="learned" rows="3" required></textarea>
+      </label>
+
+      <label class="field">
+        <span>Em gặp khó khăn gì?</span>
+        <textarea id="difficulties" rows="3" required></textarea>
+      </label>
+
+      <label class="field">
+        <span>Em cần được giải đáp điều gì?</span>
+        <textarea id="questions" rows="3" required></textarea>
+      </label>
+
+      <p class="hint">Nếu không có thì em ghi “Không có”.</p>
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <button type="submit" id="submit" class="btn-primary">
+        <span class="spinner" hidden></span>
+        <span class="label">Gửi báo cáo</span>
+      </button>
+    </form>
+
+    <section id="done" class="card done" hidden>
+      <div class="done-icon" aria-hidden="true">✓</div>
+      <h2>Đã gửi báo cáo hôm nay!</h2>
+      <p>Cảm ơn em. Hẹn gặp lại em vào ngày mai nhé.</p>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
